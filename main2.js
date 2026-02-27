@@ -23,6 +23,7 @@ directionalLight.position.set(200, 300, 200);
 directionalLight.castShadow = true;
 scene.add(directionalLight);
 
+//pinche jpeg
 THREE.DefaultLoadingManager.setURLModifier((url) => {
     if (url.toLowerCase().endsWith('.jpg')) {
         return url.replace(/\.jpg$/i, '.jpeg');
