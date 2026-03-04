@@ -146,7 +146,7 @@ for (let x = -28; x <= 28; x += blockSize) {
     }
 }
 
-// Suelo principal
+//suelo
 const groundGeo = new THREE.PlaneGeometry(100, 100);
 const groundMat = new THREE.MeshStandardMaterial({ color: 0x333333 });
 const ground = new THREE.Mesh(groundGeo, groundMat);
@@ -156,11 +156,11 @@ ground.receiveShadow = true;
 ground.material.shadowSide = THREE.FrontSide;
 scene.add(ground);
 
-// --- Bucle de Animación ---
+//animacion
 function animate() {
     requestAnimationFrame(animate);
     
-    // Efecto de parpadeo de la antorcha
+    //efecto de luz de antorcha
     steveTorchLight.intensity = 40 + Math.random() * 10;
     
     controls.update();

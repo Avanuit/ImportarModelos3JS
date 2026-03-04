@@ -3,18 +3,18 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
 
 const scene = new THREE.Scene();
-
+//defini
 const camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 20000);
-camera.position.set(0, 100, 300);
-
+camera.position.set(300, 150, 300);
+//renderer
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.shadowMap.enabled = true;
 document.body.appendChild(renderer.domElement);
-
+//posicion
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
-
+//
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
 scene.add(ambientLight);
 
