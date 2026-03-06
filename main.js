@@ -3,6 +3,24 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
 
 const scene = new THREE.Scene();
+const textureLoader = new THREE.TextureLoader();
+
+//skybox
+const loader = new THREE.CubeTextureLoader();
+const texture = loader.load([
+    'src/px.png', // Positivo X (Derecha)
+    'src/nx.png', // Negativo X (Izquierda)
+    'src/py.png', // Positivo Y (Arriba)
+    'src/ny.png', // Negativo Y (Abajo)
+    'src/pz.png', // Positivo Z (Atrás)
+    'src/nz.png', // Negativo Z (Adelante)
+]);
+
+// Asignar al fondo
+scene.background = texture;
+
+// Opcional: Esto hará que tu modelo FBX refleje el entorno automáticamente
+scene.environment = texture;
 
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.set(0, 100, 300); 
