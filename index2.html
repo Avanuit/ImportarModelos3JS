@@ -1,14 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta charset="utf-8">
-  <title>proyectrolo</title>
-  
-  <script type="importmap">
-    {
-      "imports": {
-        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
-      }
-    }
-  </script>
-  <script type="module" src="main.js"></script>
+    <meta charset="utf-8">
+    <title>WORLD OF PAINT</title>
+    <link rel="stylesheet" href="style2.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
 </head>
+<body>
+    <div id="loading-screen">
+        <h1 class="spray-text">WORLD OF PAINT</h1>
+        <div class="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+        <p class="loading-status">CARGANDO ESTACIÓN...</p>
+    </div>
+
+    <div id="graffiti-wheel" class="hidden">
+        <div class="wheel-center">
+            <p id="selected-name">SELECCIONA HERRAMIENTA</p>
+        </div>
+        <div class="wheel-container">
+            </div>
+    </div>
+
+    <div id="ui-container">
+        <div class="control-group">
+            <label>TAMAÑO DEL SPRAY</label>
+            <input type="range" id="graffiti-size" min="10" max="150" value="40">
+        </div>
+        <div class="controls-hint">
+            [Q] RULETA | [CLICK] PINTAR/BORRAR | [MOUSE] NAVEGAR
+        </div>
+    </div>
+
+    <script type="module" src="main2.js"></script>
+</body>
+</html>
